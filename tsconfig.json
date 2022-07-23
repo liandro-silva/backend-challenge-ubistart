@@ -9,13 +9,29 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "moduleResolution": "Node",
+    "paths": {
+      // Global path mapping
+      "@modules/*": ["./src/modules/*"],
+      "@shared": ["./src/shared/index"],
+      "@utils": ["./src/utils/index"],
+
+      // Backoffice path mapping
+      "@bkcontrollers": ["./src/modules/backoffice/controllers/index"],
+      "@bkinterceptors": ["./src/modules/backoffice/interceptors/index"],
+      "@bkcontracts": ["./src/modules/backoffice/contracts/index"],
+      "@bkservices": ["./src/modules/backoffice/services/index"],
+      "@bkschemas": ["./src/modules/backoffice/schemas/index"],
+      "@bkmodels": ["./src/modules/backoffice/models/index"],
+      "@bkdtos": ["./src/modules/backoffice/dto/index"]
+    }
   }
 }
