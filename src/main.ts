@@ -26,7 +26,17 @@ async function bootstrap() {
     .setTitle('TODOLIST')
     .setDescription('API created to solve Ubistart backend challenge')
     .setVersion('1.0')
-    .addBearerAuth()
+    .addBearerAuth(
+      {
+        description: 'Please enter token in following format: Bearer <JWT>',
+        name: 'Authorization',
+        bearerFormat: 'Bearer',
+        scheme: 'Bearer',
+        type: 'http',
+        in: 'Header',
+      },
+      'access-token',
+    )
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/docs', app, document, {
@@ -38,10 +48,10 @@ async function bootstrap() {
       padding: 25px 0 !important;
     }
 
-    .download-url-wrapper {
-      display: none;
-    }
     `,
+    customfavIcon: '/favicon-ubistart.png',
+    customSiteTitle: 'Open API - Ubistart Backend Challenge',
+    explorer: true,
   });
   await app.listen(configService.get('port'));
 }
