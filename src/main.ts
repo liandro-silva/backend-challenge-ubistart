@@ -8,7 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, { cors: true });
   const configService = app.get<EnvironmentVariables>(ConfigService);
   app.use(helmet);
-  app.use(csurf());
+  app.use(csurf.default());
   await app.listen(configService.port);
 }
 bootstrap();
