@@ -18,20 +18,30 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "moduleResolution": "Node",
+    "esModuleInterop": true,
     "paths": {
       // Global path mapping
       "@modules/*": ["./src/modules/*"],
       "@shared": ["./src/shared/index"],
       "@utils": ["./src/utils/index"],
 
-      // Backoffice path mapping
-      "@bkcontrollers": ["./src/modules/backoffice/controllers/index"],
-      "@bkinterceptors": ["./src/modules/backoffice/interceptors/index"],
-      "@bkcontracts": ["./src/modules/backoffice/contracts/index"],
-      "@bkservices": ["./src/modules/backoffice/services/index"],
-      "@bkschemas": ["./src/modules/backoffice/schemas/index"],
-      "@bkmodels": ["./src/modules/backoffice/models/index"],
-      "@bkdtos": ["./src/modules/backoffice/dto/index"]
+      // Tasks path mapping
+      "@tasks-controllers": ["./src/modules/backoffice/controllers/index"],
+      "@tasks-interceptors": ["./src/modules/backoffice/interceptors/index"],
+      "@tasks-contracts": ["./src/modules/backoffice/contracts/index"],
+      "@tasks-services": ["./src/modules/backoffice/services/index"],
+      "@tasks-schemas": ["./src/modules/backoffice/schemas/index"],
+      "@tasks-models": ["./src/modules/backoffice/models/index"],
+      "@tasks-dtos": ["./src/modules/backoffice/dto/index"],
+
+      // Users path mapping
+      "@users-controllers": ["./src/modules/backoffice/controllers/index"],
+      "@users-interceptors": ["./src/modules/backoffice/interceptors/index"],
+      "@users-contracts": ["./src/modules/backoffice/contracts/index"],
+      "@users-services": ["./src/modules/backoffice/services/index"],
+      "@users-schemas": ["./src/modules/backoffice/schemas/index"],
+      "@users-models": ["./src/modules/backoffice/models/index"],
+      "@users-dtos": ["./src/modules/backoffice/dto/index"]
     }
   }
 }
