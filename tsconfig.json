@@ -35,13 +35,13 @@
       "@tasks-dtos": ["./src/modules/backoffice/dto/index"],
 
       // Users path mapping
-      "@users-controllers": ["./src/modules/tasks/controllers/index"],
-      "@users-interceptors": ["./src/modules/tasks/interceptors/index"],
-      "@users-contracts": ["./src/modules/tasks/contracts/index"],
-      "@users-services": ["./src/modules/tasks/services/index"],
-      "@users-schemas": ["./src/modules/tasks/schemas/index"],
-      "@users-models": ["./src/modules/tasks/models/index"],
-      "@users-dtos": ["./src/modules/tasks/dto/index"]
+      "@users-controllers": ["./src/modules/users/controllers/index"],
+      "@users-interceptors": ["./src/modules/users/interceptors/index"],
+      "@users-contracts": ["./src/modules/users/contracts/index"],
+      "@users-services": ["./src/modules/users/services/index"],
+      "@users-schemas": ["./src/modules/users/schemas/index"],
+      "@users-models": ["./src/modules/users/models/index"],
+      "@users-dtos": ["./src/modules/users/dto/index"]
     }
   }
 }

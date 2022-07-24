@@ -6,10 +6,16 @@ import compression from 'compression';
 
 import helmet from 'helmet';
 import { VersioningType } from '@nestjs/common';
+import { NestExpressApplication } from '@nestjs/platform-express';
+import { join } from 'path';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: true });
+  const app = await NestFactory.create<NestExpressApplication>(AppModule, {
+    cors: true,
+  });
   const configService = app.get(ConfigService);
+
+  app.useStaticAssets(join(__dirname, '..', 'public'));
   app.use(compression());
   app.use(helmet());
   app.enableVersioning({
@@ -23,7 +29,20 @@ async function bootstrap() {
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api/docs', app, document);
+  SwaggerModule.setup('api/docs', app, document, {
+    customCss: `.topbar-wrapper img {
+      content:url(\'/logo-ubistart.png\'); width:300px; height:auto;
+    }
+    .swagger-ui .topbar {
+      background-color: black;
+      padding: 25px 0 !important;
+    }
+
+    .download-url-wrapper {
+      display: none;
+    }
+    `,
+  });
   await app.listen(configService.get('port'));
 }
 bootstrap();

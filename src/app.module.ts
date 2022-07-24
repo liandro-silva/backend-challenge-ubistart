@@ -7,6 +7,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from '@modules/users/users.module';
 import { TasksModule } from '@modules/tasks/tasks.module';
 
+import { join } from 'path';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
